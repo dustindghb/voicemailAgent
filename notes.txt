@@ -1,0 +1,18 @@
+Complete Data Flow:
+
+Documents → Nomic Embed Text → embeddings → ChromaDB storage
+User query → Nomic Embed Text → query embedding → ChromaDB search → relevant documents
+Retrieved documents + original query → Ollama LLM → final generated response
+
+ChromaDB install
+npm install --save chromadb chromadb-default-embed
+
+Running chromadb on a docker instance
+docker pull chromadb/chroma
+docker run -p 8000:8000 chromadb/chroma
+
+prefixing is one technique for labeling
+
+
+
+
