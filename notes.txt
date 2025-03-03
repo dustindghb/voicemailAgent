@@ -1,7 +1,7 @@
 Complete Data Flow:
 
-Documents → Nomic Embed Text → embeddings → ChromaDB storage
-User query → Nomic Embed Text → query embedding → ChromaDB search → relevant documents
+Documents → -> Sentiment Analysis -> NLP Classification -> Nomic Embed Text → embeddings → ChromaDB storage
+User query →  Phi-2               -> Mistral            -> Nomic Embed Text → query embedding → ChromaDB search → relevant documents
 Retrieved documents + original query → Ollama LLM → final generated response
 
 ChromaDB install
@@ -12,6 +12,24 @@ docker pull chromadb/chroma
 docker run -p 8000:8000 chromadb/chroma
 
 prefixing is one technique for labeling
+
+Docker Commands:
+Listing all the images container you have
+sudo docker ps -a 
+sudo docker start 3d0a58ccd2ed
+
+ollama cmd
+sudo docker exec -it ollama ollama list
+sudo docker exec -it ollama ollama run llama3.2 --verbose
+
+ sudo docker exec -it ollama //following commands
+
+ Power off
+ sudo su -
+ shutdown -h now
+
+to display like task manager
+ nvtop
 
 
 
